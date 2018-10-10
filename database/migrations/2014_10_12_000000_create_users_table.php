@@ -23,7 +23,12 @@ class CreateUsersTable extends Migration
             $table->timestamps();
         });
 
-
+        DB::table('users')->insert([
+            'name' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' =>  bcrypt('123456'),
+            'type' => 'admin'
+        ]);
     }
 
     /**
